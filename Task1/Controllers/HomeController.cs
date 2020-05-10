@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Task1.Models;
 
 namespace Task1.Controllers
 {
-    public class Employee
-    {
-        public string Name { get; set; }
-        public string  Email { get; set; }
-        public string Phone { get; set; }
-        public bool WillAttend { get; set; }
-    }
+    
     public class HomeController : Controller
     {
         [HttpGet]
@@ -21,6 +16,7 @@ namespace Task1.Controllers
 
             return View();
         }
+
         [HttpPost]
         public ViewResult Index(Employee employee)
         {
@@ -29,11 +25,19 @@ namespace Task1.Controllers
             {
                 return View("Thanks");
             }
-            return View();
-
-           
+            return View();         
         }
 
-       
+        public ViewResult About()
+        {
+
+            return View();
+        }
+        public PartialViewResult TestActionResult()
+        {
+            return PartialView("");
+        }
+
+
     }
 }
